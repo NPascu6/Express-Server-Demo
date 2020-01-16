@@ -2,9 +2,9 @@
   "name": "demo_track_server",
   "version": "1.0.0",
   "description": "",
-  "main": "src\\index.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon ."
+    "dev": "nodemon src\\index.js"
   },
   "author": "NRB",
   "license": "ISC",

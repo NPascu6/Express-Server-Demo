@@ -1,7 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const authentificationRoutes = require('../src/routes/authentificationRoutes');
 
 const app = express();
+app.use(authentificationRoutes);
 
 const _mongoURI = 'mongodb+srv://admin:Password!1@cluster0-xluyd.mongodb.net/test?retryWrites=true&w=majority';
 mongoose.connect(_mongoURI, {
@@ -17,8 +19,6 @@ mongoose.connection.on('connected', () => {
 mongoose.connection.on('error', (err) => {
     console.log('error connecting to mongo instance', err);
 });
-
-
 
 app.get('/', (req, res) => {
     res.send('Hello')
