@@ -1,14 +1,17 @@
 require('./model/User');
+require('./model/Track');
 
 const express = require('express');
 const mongoose = require('mongoose');
 const authentificationRoutes = require('../src/routes/authentificationRoutes');
+const trackRoutes = require('../src/routes/trackRoutes');
 const requireAuthentification = require('../src/middlewares/requireAuthentification');
 const bodyParser = require('body-parser');
 
 const app = express();
 app.use(bodyParser.json());
 app.use(authentificationRoutes);
+app.use(trackRoutes);
 
 const _mongoURI = 'mongodb+srv://admin:Password!1@cluster0-xluyd.mongodb.net/test?retryWrites=true&w=majority';
 mongoose.connect(_mongoURI, {
