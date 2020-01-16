@@ -1,3 +1,5 @@
+require('./model/User');
+
 const express = require('express');
 const mongoose = require('mongoose');
 const authentificationRoutes = require('../src/routes/authentificationRoutes');
@@ -15,11 +17,11 @@ mongoose.connect(_mongoURI, {
 });
 
 mongoose.connection.on('connected', () => {
-    console.log('succesfully connected to mongo instance');
+    console.log('Succesfully connected to mongo instance');
 });
 
 mongoose.connection.on('error', (err) => {
-    console.log('error connecting to mongo instance', err);
+    console.log('Error connecting to mongo instance', err);
 });
 
 app.get('/', (req, res) => {
